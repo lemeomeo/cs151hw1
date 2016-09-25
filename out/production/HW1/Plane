@@ -1,0 +1,45 @@
+/**
+ * holding the seats
+ */
+public class Plane
+{
+    //instance variable
+    int row;
+    String preference; // There are three preferences : Window, Center, Aisle
+    String planeClass = "";
+    //constructor
+    public Plane ()
+    {
+        row = 0;
+        preference = "";
+    }
+
+    public void setRow(int r)
+    {
+        row = r;
+    }
+
+    // preference can only be W, C, A
+    public void setPreference(String letter)
+    {
+        if (letter == "A" || letter == "F")
+        {
+            preference = "W"; //window
+        }
+        else if (letter == "C" || letter == "D")
+        {
+            preference = "A"; //aisle
+        }
+        else if (letter == "E" || letter == "B")
+        {
+            preference = "C";
+        }
+    }
+
+    //either First or Economy
+    public void setPlaneClass(String cl)
+    {
+        planeClass = cl;
+    }
+
+}

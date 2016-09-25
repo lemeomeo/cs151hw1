@@ -1,0 +1,43 @@
+/**
+ * Created by le on 9/20/16.
+ */
+public class Passenger
+{
+    String name;
+    Plane seat;
+    String groupName;
+    String option;
+    // group can either belong to some string, or null
+
+    public Passenger()
+    {
+        name = "";
+        seat = new Plane();
+        groupName = "";
+        option = "";
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public Plane getSeat()
+    {
+        return seat;
+    }
+
+    public String getGroupName()
+    {
+        return groupName;
+    }
+
+    public boolean isInGroup()
+    {
+        if (option == "G")
+        {
+            return true;
+        }
+        return false;
+    }
+}

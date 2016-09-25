@@ -1,0 +1,50 @@
+/**
+ * Put in JavaDoc
+ */
+import java.util.*;
+import java.io.*;
+
+public class ReservationSystem
+{
+    // main method that run the program
+    public static void main (String[] args) throws IOException
+    {
+        Passenger[][] passengers = new Passenger[29][6];
+        //29 rows and 6 columns (A, B, C, D, E, F)
+
+        Scanner data = new Scanner(new File(args[0]));
+        // read input from a file, populate to a data structure
+        data.nextLine(); // skip the first line
+        while (data.hasNextLine())
+        {
+            String line = data.nextLine();
+            line.replaceAll(",", ""); //get rid of commas
+            String[] arr = line.split(" ");
+
+        }
+        data.close();
+    }
+
+    public Passenger toPassenger(String[] p)
+    {
+        Passenger passenger = new Passenger();
+        Plane aSeat = new Plane();
+        if (p.length == 3)
+        {
+            String seat = p[0];
+
+            if (seat.length() == 2) // Example: 1A, 2B, 2F, 1C
+            {
+                aSeat.setPlaneClass("First");
+                int row = Integer.parseInt(seat.substring(0, 1));
+                aSeat.setRow(row);
+                aSeat.setPreference(seat.substring(1,2)); //aSeat.setPreference("A")
+                seat = seat.toLowerCase(); // 1A => 1a
+                char c = seat.charAt(1);
+                int pos = c - 'a' + 1; //convert from a to 1, b to 2..., position for my 2D array
+
+            }
+        }
+        return null;
+    }
+}
